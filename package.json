@@ -1,0 +1,30 @@
+{
+  "name": "righty",
+  "version": "0.1.1",
+  "description": "Righty - The right way to structure your routes in express",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TabishRizvi/righty.git"
+  },
+  "keywords": [
+    "route",
+    "structure",
+    "validations",
+    "hapi",
+    "path"
+  ],
+  "author": "Tabish Rizvi <sayyidtabish@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TabishRizvi/righty/issues"
+  },
+  "homepage": "https://github.com/TabishRizvi/righty#readme",
+  "dependencies": {
+    "joi": "^9.1.0",
+    "underscore": "^1.8.3"
+  }
+}
