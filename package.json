@@ -1,6 +1,6 @@
 {
   "name": "righty",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Righty - The right way to structure your routes in express",
   "main": "lib/index.js",
   "scripts": {
@@ -24,9 +24,10 @@
   },
   "homepage": "https://github.com/TabishRizvi/righty#readme",
   "dependencies": {
-    "async": "^2.0.1",
+    "body-parser": "^1.15.2",
     "fs-extra": "^0.30.0",
     "joi": "^9.1.0",
+    "multer": "^1.2.0",
     "underscore": "^1.8.3"
   }
 }
