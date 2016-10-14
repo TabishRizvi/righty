@@ -104,7 +104,7 @@ Example where `routeMapping` is an object:
 
 var router = require("righty").Router();   
   
-var controllers = require("../controllers);  
+var controllers = require("../controllers");  
 
 var routeMapping = {
             path : "/profile/:id",
@@ -146,7 +146,7 @@ Example where `routeMapping` is an array:
 
 var router = require("righty").Router();   
   
-var controllers = require("../controllers);  
+var controllers = require("../controllers");  
 
 var routeMapping = [
     {
