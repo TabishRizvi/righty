@@ -49,7 +49,7 @@ var Righty = require("righty")({
 
 An `options` object containing following keys has to be passed to instantiate Righty:
 
-- `defaultContentType` -  The content types to be used for routes, for which content type is explicitly mentioned. Supported content types (for now) : "json", "urlencoded" and "multipart"
+- `defaultContentType` -  The content types to be used for routes, for which content type is not explicitly mentioned. Supported content types (for now) are  "json", "urlencoded" and "multipart"
 
 - `swagger` -  an optional object specifying swagger configuration. If omitted, documentation will not be generated. It may contain following keys:
     - `title` - title of the  documentation. **_Required_** 
@@ -58,6 +58,8 @@ An `options` object containing following keys has to be passed to instantiate Ri
     - `schemes` - 	The transfer protocol of the API. Values MUST be from the list: "http", "https", "ws", "wss". If the schemes is not included, the default scheme to be used is the one used to access the Swagger definition itself. **_Optional_**  
     - `host` - The host (name or ip) serving the API. This MUST be the host only and does not include the scheme nor sub-paths. It MAY include a port. If the host is not included, the host serving the documentation is to be used (including the port) . **_Optional_**  
   
+
+**_Note : You need to declare public directory as static if swagger documentation is required _**
 
 ### Righty.use(app,router)
 
@@ -95,7 +97,7 @@ A `routeMapping` object contains following keys:
 ##### filePropSchema
 
 It is an object containing file validation rules:
-- mimetype - an array of mime-types to be used as filter for the file. Patterns like "*/*", "image/*", etc. are accepted. **_Required_**
+- mimetype - an array of mime-types to be used as filter for the file. Patterns like '&#42;/&#42;', "image/&#42;", etc. are accepted. **_Required_**
 - size - Maximum size allowed for files in bytes. **_Optional_**
 
 Example where `routeMapping` is an object: 
