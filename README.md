@@ -1,19 +1,13 @@
 ![Righty Logo](https://s11.postimg.org/z5q72649v/righty_logo.png)]
 
-The *RIGHT* way to configure routes in [express.js](https://github.com/expressjs/express)
+A clean,fast,efficient and the *RIGHT* way to configure routes in [express.js](https://github.com/expressjs/express)
 
-# **`righty`**
-
-![NPM](https://nodei.co/npm/righty.png?downloadRank=true&stars=true)](https://nodei.co/npm/righty/)
-
-
-## The *RIGHT* way to configure routes in [express.js](https://github.com/expressjs/express)
-
+![NPM](https://nodei.co/npm/righty.png?downloadRank=true&stars=true)
 
 ## Installation
 
 ```sh
-npm install async-straight
+npm install righty
 ```
 
 ## API
