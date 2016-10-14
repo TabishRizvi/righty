@@ -1,10 +1,10 @@
 {
   "name": "righty",
-  "version": "0.1.8",
-  "description": "Righty - The right way to structure your routes in express",
+  "version": "1.0.1",
+  "description": "Righty - A clean,fast,efficient and the RIGHT way to configure routes in express.js",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "echo 'none'"
   },
   "repository": {
     "type": "git",
@@ -12,10 +12,12 @@
   },
   "keywords": [
     "route",
-    "structure",
-    "validations",
-    "hapi",
-    "path"
+    "joi",
+    "swagger",
+    "express",
+    "path",
+    "routing",
+    "configuration"
   ],
   "author": "Tabish Rizvi <sayyidtabish@gmail.com>",
   "license": "MIT",
