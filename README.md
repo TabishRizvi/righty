@@ -2,7 +2,7 @@
 
 A clean,fast,efficient and the *RIGHT* way to configure routes in express.js
 
-![NPM](https://nodei.co/npm/righty.png?downloadRank=true&stars=true)
+[![NPM](https://nodei.co/npm/righty.png?downloadRank=true&stars=true)](https://www.npmjs.com/package/righty)
 
 
 ## Installation
