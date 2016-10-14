@@ -22,7 +22,7 @@ $ npm install righty
 
 ## People
 
-The original author of Express is [Tabish Rizvi](https://github.com/TabishRizvij)
+The original author of `righty` is [Tabish Rizvi](https://github.com/TabishRizvi)
 
 I am looking for collaborators for this project. Anyone interested can mail be at [sayyidtabish@gmail.com](mailto:sayyidtabish@gmail.com)
 
