@@ -52,9 +52,37 @@ An `options` object containing following keys has to be passed to instantiate Ri
 - `defaultContentType` -  The content types to be used for routes, for which content type is explicitly mentioned. Supported content types (for now) : "json", "urlencoded" and "multipart"
 
 - `swagger` -  an optional object specifying swagger configuration. If omitted, documentation will not be generated. It may contain following keys:
-    - `title` - title of the  documentation . _Required_ 
+    - `title` - title of the  documentation. **_Required_** 
+    - `version` - version of the  documentation. **_Required_** 
+    - `description` - description of the  documentation. **_Optional_** 
+    - `schemes` - 	The transfer protocol of the API. Values MUST be from the list: "http", "https", "ws", "wss". If the schemes is not included, the default scheme to be used is the one used to access the Swagger definition itself. **_Optional_**  
+    - `host` - The host (name or ip) serving the API. This MUST be the host only and does not include the scheme nor sub-paths. It MAY include a port. If the host is not included, the host serving the documentation is to be used (including the port) . **_Optional_**  
   
 
+### Righty.use(app,router)
+
+It mounts `Righty` router (see below) to express app.
+
+### Righty.Router()
+
+Creates a new Righty router instance
+
+```js  
+
+var router = require("righty").Router();     
+  
+```
+
+### router.add(routeMapping)
+
+It mounts route(s) to a `Righty` router instance. It takes `routeMapping` as a single argument. `routeMapping` can be an object or an array of similar objects.
+
+A `routeMapping` object contains following keys:
+
+- path - Route path as used in Express. **_Required_** 
+- method - HTTP method of the request, such as GET, PUT, POST, and so on, in lowercase. **_Required_** 
+- contentType - The content type to be associated with the route. If omitted, defaultContentType is used. **_Optional_** 
+- handler - standar express middleware to be called to generate the response after successful body parsing and validation. **_Required_** 
 
 ## Quick Start
 
