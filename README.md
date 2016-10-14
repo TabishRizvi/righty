@@ -18,6 +18,43 @@ $ npm install righty
   * Validations using Joi
   * Automatic swagger documentation generation
   * Body parsing  support (json,urlencoded,multipart-formdata)
+  
+
+## API
+
+### Righty
+
+  Exposed by `require('righty')`.
+  
+### Righty(options)
+
+Creates a new Righty instance.
+  
+```js  
+
+var Righty = require("righty")({
+    defaultContentType : "json",
+    swagger : {
+        title : "Demo app",
+        version : "v1",
+        description : "Swagger docs for demo app. Generated using `righty`",
+        schemes : ["http"],
+        host : "localhost:3000"
+    }
+});      
+  
+```
+
+#### options
+
+An `options` object containing following keys has to be passed to instantiate Righty:
+
+- `defaultContentType` -  The content types to be used for routes, for which content type is explicitly mentioned. Supported content types (for now) : "json", "urlencoded" and "multipart"
+
+- `swagger` -  an optional object specifying swagger configuration. If omitted, documentation will not be generated. It may contain following keys:
+    - `title` - sdas
+  
+
 
 ## Quick Start
 
@@ -29,7 +66,7 @@ var Joi = require("joi");
 
 var router = require("righty").Router();    // router instance
 
-var righty = require("righty")({
+var Righty = require("righty")({
     defaultContentType : "json",
     swagger : {
         title : "Demo app",
@@ -83,7 +120,7 @@ router.add(routeMapping);           // add routes to router
 
 app.use(express.static(__dirname+ '/public'));       // Note : You need to declare public directory as static if swagger documentation required
 
-righty.use(app,router);          // attach router to app
+Righty.use(app,router);          // attach router to app
 
 app.listen(3000);
 
