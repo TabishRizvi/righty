@@ -18,4 +18,4 @@ module.exports.validSchemes =  [
     "https"
 ];
 
-
+module.exports.validHttpMethods = ["get","post","put","delete","options","patch","head"];
