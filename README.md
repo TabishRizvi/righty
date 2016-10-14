@@ -1,4 +1,4 @@
-![Righty Logo](https://s17.postimg.org/9ady362an/zza.jpg)]
+![Righty Logo](https://s13.postimg.org/c98ykys5z/righty_logo.png)]
 
 The *RIGHT* way to configure routes in [express.js](https://github.com/expressjs/express)
 
