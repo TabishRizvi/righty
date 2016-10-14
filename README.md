@@ -201,6 +201,7 @@ module.exports = router;
 
 An alternate version of router.add() to facilitate hierarchical routing. `subRouter` is a normal Righty router  and `basePath` is the path prepended to all the routes in subRouter.
 
+Check out [this](https://github.com/TabishRizvi/righty-demo) full blown project which illustrates hierarchical routing.
 ## Quick Start
 
 ```js
