@@ -52,7 +52,7 @@ An `options` object containing following keys has to be passed to instantiate Ri
 - `defaultContentType` -  The content types to be used for routes, for which content type is explicitly mentioned. Supported content types (for now) : "json", "urlencoded" and "multipart"
 
 - `swagger` -  an optional object specifying swagger configuration. If omitted, documentation will not be generated. It may contain following keys:
-    - `title` - sdas
+    - `title` - title of the  documentation . _Required_ 
   
 
 
