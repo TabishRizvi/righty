@@ -77,12 +77,127 @@ var router = require("righty").Router();
 
 It mounts route(s) to a `Righty` router instance. It takes `routeMapping` as a single argument. `routeMapping` can be an object or an array of similar objects.
 
+#### routeMapping 
+
 A `routeMapping` object contains following keys:
 
 - path - Route path as used in Express. **_Required_** 
 - method - HTTP method of the request, such as GET, PUT, POST, and so on, in lowercase. **_Required_** 
 - contentType - The content type to be associated with the route. If omitted, defaultContentType is used. **_Optional_** 
-- handler - standar express middleware to be called to generate the response after successful body parsing and validation. **_Required_** 
+- handler - standard express middleware to be called to generate the response after successful body parsing and validation. **_Required_** 
+- validate - Object containing validation rules. **_Optional_**
+  - body - Joi schema object. **_Optional_**
+  - query - Joi schema object. **_Optional_**
+  - params - Joi schema object. **_Optional_**
+  - headers - Joi schema object. **_Optional_**
+  - files - object containing file names as keys and filePropSchema (see below) as values. **_Optional_**
+ 
+##### filePropSchema
+
+It is an object containing file validation rules:
+- mimetype - an array of mime-types to be used as filter for the file. Patterns like "*/*", "image/*", etc. are accepted. **_Required_**
+- size - Maximum size allowed for files in bytes. **_Optional_**
+
+Example where `routeMapping` is an object: 
+
+```js  
+
+var router = require("righty").Router();   
+  
+var controllers = require("../controllers);  
+
+var routeMapping = {
+            path : "/profile/:id",
+            method : "put",
+            validate : {
+                body : {
+                    name : Joi.string(),
+                    gender : Joi.any().valid("m","f")
+                },
+                headers : {
+                    "x-authorization" : Joi.string()
+                },
+                query : {
+                    askForAcknowledgement : Joi.number().valid(0,1),
+                },
+                params : {
+                    id : Joi.number().integer()
+                },
+                files : {
+                    pic : {
+                        mimetype : ["image/*"],
+                        size : 50000
+                    }
+                }
+            },
+            contentType : "multipart",
+            handler : controllers.ProfileUpdateCtrl
+};
+
+router.add(routeMapping);
+
+module.exports = router;
+  
+```
+
+Example where `routeMapping` is an array: 
+
+```js  
+
+var router = require("righty").Router();   
+  
+var controllers = require("../controllers);  
+
+var routeMapping = [
+    {
+            path : "/profile/:id",
+            method : "put",
+            validate : {
+                body : {
+                    name : Joi.string(),
+                    gender : Joi.any().valid("m","f")
+                },
+                headers : {
+                    "x-authorization" : Joi.string()
+                },
+                query : {
+                    askForAcknowledgement : Joi.number().valid(0,1),
+                },
+                params : {
+                    id : Joi.number().integer()
+                },
+                files : {
+                    pic : {
+                        mimetype : ["image/*"],
+                        size : 50000
+                    }
+                }
+            },
+            contentType : "multipart",
+            handler : controllers.ProfileUpdateCtrl
+    },
+    {
+                path : "/profile/:id",
+                method : "get",
+                validate : {
+                    params : {
+                        id : Joi.number().integer()
+                    }
+                },
+                handler : controllers.ProfileViewCtrl
+        }
+    
+];
+
+router.add(routeMapping);
+
+module.exports = router;
+  
+```
+
+### router.add(basePath,subRouter)
+
+An alternate version of router.add() to facilitate hierarchical routing. `subRouter` is a normal Righty router  and `basePath` is the path prepended to all the routes in subRouter.
 
 ## Quick Start
 
