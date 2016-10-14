@@ -27,7 +27,7 @@ var express = require('express');
 var app = express();
 var Joi = require("joi");
 
-var router = require("righty").router();    // router instance
+var router = require("righty").Router();    // router instance
 
 var righty = require("righty")({
     defaultContentType : "json",
@@ -66,7 +66,7 @@ var routeMapping = [
         method : "post",
         validate : {
             body : {
-                data : Joi.string().max(25)
+                data : Joi.string().max(250)
             }
         },
         handler : SendMessageCtrl
