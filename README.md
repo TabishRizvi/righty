@@ -59,7 +59,7 @@ An `options` object containing following keys has to be passed to instantiate Ri
     - `host` - The host (name or ip) serving the API. This MUST be the host only and does not include the scheme nor sub-paths. It MAY include a port. If the host is not included, the host serving the documentation is to be used (including the port) . **_Optional_**  
   
 
-**_Note : You need to declare public directory as static if swagger documentation is required _**
+**_Note: You need to declare public directory as static if swagger documentation is required._**
 
 ### Righty.use(app,router)
 
