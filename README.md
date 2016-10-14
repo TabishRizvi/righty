@@ -19,6 +19,76 @@ $ npm install righty
   * Automatic swagger documentation generation
   * Body parsing  support (json,urlencoded,multipart-formdata)
 
+## Quick Start
+
+```js
+
+var express = require('express');
+var app = express();
+var Joi = require("joi");
+
+var router = require("righty").router();    // router instance
+
+var righty = require("righty")({
+    defaultContentType : "json",
+    swagger : {
+        title : "Demo app",
+        version : "v1",
+        description : "Swagger docs for demo app. Generated using `righty`",
+        schemes : ["http"],
+        host : "localhost:3000"
+    }
+});                                       // righty instance
+
+function SendMessageCtrl(req,res) {
+
+    
+    // req.body = > { data : "xyz"}
+    
+    res.send({
+        message : "Sent"
+    });
+}
+
+function ReceiveMessageCtrl(req,res) {
+
+    res.send({
+        message: "OK",
+        data: ["Hi Foo", "Is Bar der?"]
+    });
+}
+
+
+var routeMapping = [
+
+    {
+        path : "/message",
+        method : "post",
+        validate : {
+            body : {
+                data : Joi.string().max(25)
+            }
+        },
+        handler : SendMessageCtrl
+    },
+
+    {
+        path : "/message",
+        method : "get",
+        handler : ReceiveMessageCtrl
+    }
+];                           
+
+router.add(routeMapping);           // add routes to router
+
+app.use(express.static(__dirname+ '/public'));       // Note : You need to declare public directory as static if swagger documentation required
+
+righty.use(app,router);          // attach router to app
+
+app.listen(3000);
+
+
+```
 
 ## People
 
