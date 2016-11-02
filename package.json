@@ -1,6 +1,6 @@
 {
   "name": "righty",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Righty - A clean,fast,efficient and the RIGHT way to configure routes in express.js",
   "main": "lib/index.js",
   "scripts": {
