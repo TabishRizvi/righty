@@ -274,6 +274,10 @@ An alternate version of router.add() to facilitate hierarchical routing. `subRou
 
 Check out [this](https://github.com/TabishRizvi/righty-demo) full blown project which illustrates hierarchical routing.
 
+## UPDATE
+
+Now handler can be either middleware or an array of middlewares.
+
 ## People
 
 The original author of `righty` is [Tabish Rizvi](https://github.com/TabishRizvi)
